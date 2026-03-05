@@ -30,16 +30,7 @@ model={ "calm": {
     "chase": {...}
 }
 
-That data can then be accessed as;   model[<pattern context>][<prefix key>][<next token>]
-
-It will also record the frequency of door transitions between those rooms
-
-door_frequency={
-    "A|B":{"A-B_#"=#},
-    "B|C":{"B-C_#"=#},
-    "C|A":{"C-A_#"=#},
-    "A|D":{"A-D_#"=#}
-}
+That data can then be accessed as;   model[pattern context][prefix key][next token]
 
 By analyzing the frequency of these sequences, the model will learn common paths, repeated routes, and looping behavior.
 Unlike a basic first-order Markov model that only considers the last room visited, the Variable-Order approach can look at multiple previous rooms as the “context” to make more informed predictions. 
