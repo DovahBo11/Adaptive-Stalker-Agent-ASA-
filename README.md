@@ -6,13 +6,16 @@ Variable Order Markov Model (VOMM):
 Each room represents a state, and player movement is recorded as a sequence of room transitions (“A”,"A-B_#",“B”,"B-C_#",“C”,"C-A_#",“A”,"A-D_#","D") with pattern context like "calm" or "chase", then record them in an n-gram hash map that breaks down that pattern for future probability calculation;
 
 input=[“A”,"A-B_#",“B”,"B-C_#",“C”,"A-C_#",“A”,"D-A_#","D",...,N]
+
 history=["A","B","C","A","D"]
+
 doorHistory={
   "A|B":{"A-B_#":1},
   "B|C":{"B-C_#":1},
   "C|A":{"A-C_#":1},
   "A|D":{"D-A_#":1}
 }
+
 model={ "calm": { 
         "A":{"D":1, "B":1},
         "C|A":{"D":1},
@@ -26,8 +29,11 @@ model={ "calm": {
         }
     "chase": {...}
 }
+
 That data can then be accessed as;   model[<pattern context>][<prefix key>][<next token>]
+
 It will also record the frequency of door transitions between those rooms
+
 door_frequency={
     "A|B":{"A-B_#"=#},
     "B|C":{"B-C_#"=#},
