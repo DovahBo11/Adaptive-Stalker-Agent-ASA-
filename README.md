@@ -1,4 +1,4 @@
-# Adaptive-Stalker-Agent-ASA-
+# Adaptive-Stalker-Agent-ASA
 The Adaptive Stalker Agent (ASA) is a multi-brain AI system built in GDScript for creating intelligent stalker-type enemies.
 It is designed to learn player movement habits through rooms/doors, predict likely future movement, and suggest a high-level behavioral action based on those predictions.
 
